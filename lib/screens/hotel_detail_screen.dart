@@ -1,4 +1,4 @@
-import 'package:airbnb/constanst/constanst.dart';
+import 'package:airbnb/constant/constant.dart';
 import 'package:airbnb/widget/testi_card.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
