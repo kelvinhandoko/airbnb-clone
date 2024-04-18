@@ -22,6 +22,7 @@ class ImageCarousel extends StatelessWidget {
               width: double.infinity,
               margin: const EdgeInsets.symmetric(horizontal: 5.0),
               decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
                   image: DecorationImage(image: image, fit: BoxFit.cover)),
             );
           },

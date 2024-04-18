@@ -1,3 +1,4 @@
+import 'package:airbnb/screens/home_screen.dart';
 import 'package:airbnb/screens/hotel_detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,10 +16,18 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-          textTheme: GoogleFonts.poppinsTextTheme(),
-          useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey)),
-      home: const HotelDetailScreen(),
+        textTheme: GoogleFonts.poppinsTextTheme(),
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.grey),
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            TargetPlatform.iOS: FadeUpwardsPageTransitionsBuilder(),
+            TargetPlatform.linux: OpenUpwardsPageTransitionsBuilder(),
+            TargetPlatform.macOS: FadeUpwardsPageTransitionsBuilder(),
+          },
+        ),
+      ),
+      home: const HomeScreen(),
     );
   }
 }

@@ -32,6 +32,7 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                 physics: const BouncingScrollPhysics(),
                 slivers: <Widget>[
                   SliverAppBar(
+                    automaticallyImplyLeading: false,
                     backgroundColor: Colors.white,
                     pinned: true,
                     elevation: 2,
@@ -44,14 +45,16 @@ class _HotelDetailScreenState extends State<HotelDetailScreen> {
                       ),
                     ),
                     onStretchTrigger: () async {},
-                    title: const Row(
+                    title: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         IconContainer(
                           icon: CupertinoIcons.back,
-                          onPressed: null,
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
                         ),
-                        Row(
+                        const Row(
                           children: [
                             IconContainer(
                               icon: CupertinoIcons.share,
